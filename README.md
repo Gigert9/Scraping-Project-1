@@ -246,4 +246,36 @@ Once again, I looked to Python and searched GitHub for any prewritten tools that
 
 ### Main.py
 
-This is the final iteration of my Python script for scraping 10Times. It doesn't work, but I feel it's important to include all stages of project development regardless of their success. The main issue I found when scraping 10Times was a lack of structured HTML code. It was not possible to identify many required elements due to a lack of **<id>** tags and (even worse) a general lack of any attributes on the specific elements which held the contents we wished to scrape. It is most certainly entirely possible to continue down the route I've begun with this script, perhaps with the help of Regular Expressions to search for specific strings, and develop a functioning script that would perform the desired actions accurately.
+This is the final iteration of my Python script for scraping 10Times. It doesn't work, but I feel it's important to include all stages of project development regardless of their success. The main issue I found when scraping 10Times was a lack of structured HTML code. It was not possible to identify many required elements due to a lack of **<id>** tags and (even worse) a general lack of any attributes on the specific elements which held the contents we wished to scrape. It is most certainly entirely possible to continue down the route I've begun here, perhaps with the help of Regular Expressions to search for specific strings, and develop a functioning script that would perform the desired actions accurately. In its current state, the script will successfully get the HTML code of the given **URL** variable, and only return a single word that it parsed from that page. Delegates:
+
+```
+# import libraries
+from bs4 import BeautifulSoup
+import requests
+import re
+import time
+import datetime
+
+import smtplib
+
+# connect to website
+URL="https://www.10times.com/atlanta-tech-security"
+headers = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"}
+page = requests.get(URL, headers=headers)
+
+# copy page HTML and make it pretty
+soup1 = BeautifulSoup(page.content, "html.parser")
+soup2 = BeautifulSoup(soup1.prettify(), "html.parser")
+
+delegates = soup2.find(id="name_vis").get_text()
+
+
+
+print(delegates)
+```
+
+## Adding More Power
+
+After struggling Python for long enough, I once again began to feel the project reaching a state of finality. That was, until I finally woke up to the cries of my cohorts. "Use Power Automate," they screamed! "It's so much easier," they cried! Their pleas fell upon deaf ears, until I had an incredible revalation. A deeply personal and entirely individual epiphany of epic porportions. I could just do it all in Power Automate!
+
+With life advice of a close friend ringing in my head as a beacon ("We don't do lines"), I immediately saw greater and more accurate results using Microsoft's low-code environment than I had seen throughought almost the entire project thus far.
