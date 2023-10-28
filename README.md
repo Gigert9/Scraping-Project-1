@@ -2,13 +2,22 @@
 
 What follows is an account of attempting to scrape two separate websites during the execution of a single project. The initial focus was LinkedIn and then switched to 10Times, both chosen as targets to gain information surrounding events and attendees. All actions described or performed within were done so for research purposes only. Any data collected is publicly available and all techniques which were used relied on legitimate authentication.
 
-# Chapter 1: Getting Ideas LinkedIn To Place
+## Table of Contents
+
+- [Chapter 1: Getting Ideas LinkedIn To Place](https://github.com/Gigert9/Scraping-Project-1/edit/main/README.md#chapter-1-getting-ideas-linkedin-to-place)
+    - [Snaking Our Way Towards Progress](https://github.com/Gigert9/Scraping-Project-1/edit/main/README.md#snaking-our-way-towards-progress)
+    - [LSv1.py](https://github.com/Gigert9/Scraping-Project-1/edit/main/README.md#lsv1py)
+- [Chapter 2: Things Get 10Times Different](https://github.com/Gigert9/Scraping-Project-1/edit/main/README.md#chapter-2-things-get-10times-different)
+    - [Main.py](https://github.com/Gigert9/Scraping-Project-1/edit/main/README.md#mainpy)
+    - [Adding More Power](https://github.com/Gigert9/Scraping-Project-1/edit/main/README.md#adding-more-power)
+
+## Chapter 1: Getting Ideas LinkedIn To Place
 
 This project has gone through many iterations as its inception was directly linked to the timing of live events. I was originally commissioned to create a script that would scrape [LinkedIn](https://www.linkedin.com). The requirements called for the allowance of various parameters, such as identification of companies, personnel titles, and individual contact information. Simple at a glance, but naturally (being a commissioned project) the state of the input data was limiting. The expectation was to fully research, validate, and compile the required data given nothing more than a list of names. 
 
 My immediate (perhaps foolish) reaction was to create a BASH script that would make use of **curl** requests. I figured it would be as easy as then using **grep** to parse the returned HTML code of the page for the specific values given for the various elements. Rinse and repeat per query, right? This is an embarrassingly amateur assumption. While it may be possible to create the script described, in order to ensure a deliverable capable of fulfilling the Project Lead's requests while still be optimized for maximum effeciency, BASH is hardly the most efficient option.
 
-## Snaking Our Way Towards Progress
+### Snaking Our Way Towards Progress
 
 After more rational thought, I attempted utilizing Python for a solution. In previous studies I had seen the capabilities of the language in the realm of web-based interactions, and it seemed like a perfect fit. I begin by reading various online sources, and eventually made my way to [GitHub](https://www.github.com) and located several handy repositories. The most helpful, beyond a shadow of a doubt, was [linkedin_scraper]( https://github.com/joeyism/linkedin_scraper) by “joeyjism”. I’m eternally grateful for the assistance and flawless code. It was very easy to understand and worked with little error. Sadly, it lacked the ability to scrape a crucial desired piece of data. 
 
@@ -236,7 +245,7 @@ f.close()
 """
 ```
 
-# Chapter 2: Things Get 10Times Different
+## Chapter 2: Things Get 10Times Different
 
 While I would have been satisfied with giving the project the old college try and calling it a day, the Project Lead in this instance was anything but a quitter. Sure the live event had come and gone and we had no working script to show for our efforts, but there was still more to do! On to the next event, but which one? We now turned our sights towards [10Times](https://www.10times.com).
 
@@ -274,8 +283,8 @@ delegates = soup2.find(id="name_vis").get_text()
 print(delegates)
 ```
 
-## Adding More Power
+### Adding More Power
 
-After struggling Python for long enough, I once again began to feel the project reaching a state of finality. That was, until I finally woke up to the cries of my cohorts. "Use Power Automate," they screamed! "It's so much easier," they cried! Their pleas fell upon deaf ears, until I had an incredible revalation. A deeply personal and entirely individual epiphany of epic porportions. I could just do it all in Power Automate!
+After struggling with Python for long enough, I once again began to feel the project reaching a state of finality. That was, until I finally woke up to the cries of my cohorts. "Use Power Automate," they screamed! "It's so much easier," they cried! Their pleas fell upon deaf ears, until I had an incredible revalation. A deeply personal and entirely individual epiphany of epic porportions. I could just do it all in Power Automate!
 
 With life advice of a close friend ringing in my head as a beacon ("We don't do lines"), I immediately saw greater and more accurate results using Microsoft's low-code environment than I had seen throughought almost the entire project thus far.
