@@ -4,7 +4,7 @@ What follows is an account of attempting to scrape two separate websites during 
 
 ## Table of Contents
 
-- - [Chapter 1: Getting Ideas LinkedIn To Place](https://github.com/Gigert9/Scraping-Project-1/tree/main#chapter-1-getting-ideas-linkedin-to-place)
+- [Chapter 1: Getting Ideas LinkedIn To Place](https://github.com/Gigert9/Scraping-Project-1/tree/main#chapter-1-getting-ideas-linkedin-to-place)
     - [Snaking Our Way Towards Progress](https://github.com/Gigert9/Scraping-Project-1/tree/main#snaking-our-way-towards-progress)
     - [LSv1.py](https://github.com/Gigert9/Scraping-Project-1/tree/main#lsv1py)
 - [Chapter 2: Things Get 10Times Different](https://github.com/Gigert9/Scraping-Project-1/tree/main#chapter-2-things-get-10times-different)
