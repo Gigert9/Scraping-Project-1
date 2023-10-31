@@ -242,6 +242,7 @@ f.close()
 ```
 
 ## Chapter 2: Things Get 10Times Different
+
 While I may have been satisfied with giving the project the old college try and calling it a day, the Project Lead in this instance was anything but a quitter. Sure the relevant live event had come and gone and I had no working script to show for my efforts, but there was still more to do! On to the next event, sure, but which one? What if we could automate a way of identifying upcoming events and collecting their surrounding details? We now turned our sights towards [10Times](https://www.10times.com).
 
 I had never heard of the this website, but it's essentially an event aggregator. Users can search and register for various conferences, workshops, and other events by making a free profile, or simply browse anonymously. This immediately seemed an easier target. Without any authentication requirement prior to viewing data, the idea of scraping this page appeared fairly straightforward. The Project Lead simply wanted to be able to specify a region or industry, and have a script search and parse results for all events that fell within the given parameters. In addition to the name, location, and time, the Project Lead was particularly interested in gathering details surrounding estimated turnout for each event.
@@ -279,6 +280,7 @@ print(delegates)
 ```
 
 ### Adding More Power
+
 Once it became clear Python would be even more of a challenge than when previously implemented for the LinkedIn script, I once again began to feel the project reaching a state of failed finality. That was, until I finally acknowledged the cries of my cohorts. "Use Power Automate," they screamed! "It's so much easier," they cried! Their pleas fell upon deaf ears, until I had an incredible revalation. A deeply personal and entirely individual epiphany of epic porportions. I could just do it all in Power Automate!
 
 With the life advice of a close friend ringing in my head as a beacon ("We don't do lines"), I immediately saw greater and more accurate results using Microsoft's low-code environment than I had seen throughought almost the entire project thus far. After about five minutes of learning the layout of the Power Automate for Desktop, I began by creating a flow that would search and extract the names of all events in a given region. This proved to be a simple task, and we started attempting to scale-up the region size to include more results. As we did so, it became apparent that not all search results would return on a single page. As such, the flow had to be altered to look for the button element that could be clicked to show more results. After some tweaking of the loop values, I ended up with the following process:
@@ -304,3 +306,13 @@ Admittedly I am very new to Microsoft's Power Suite and this is my first interac
 Once the above flow is run, we are returned with some pretty rough data. There are several issues with the flow above that will be addressed in the next chapter. That said, after cleaning the data returned from the initial run, we were still left with some promising results.
 
 ![Event_Details_Cleaned](References/Event_Details_Excel.png)
+
+## Chapter 3: Scraping Up The Pieces
+
+So, we now had a (semi-) working flow that produces results that can be cleaned and followed up with. We're done, right? Well...as usually happens on these projects, the enthusiasm of the Project Lead has effected me to the point of wanting to continue to a point of actual finality. A finality that ideally isn't just successful, but effecient. Let's breakdown some of the issues with the flow responsible for parsing event details now.
+
+Firstly, some may have noticed the instruction to read from line **1** to line **348** in column **'A'**. This is because after initially testing our first flow within a smaller region size and extracting event names, we had 348 results. Needless to say, when running the flow to look across all events throughout the US, the results size increased enormously. Naturally, this value would then need to be changed each time we extracted a new list of event names. Hardly effecient.
+
+Secondly, the event detailing flow makes use of an extraneous number of mouse clicks. While some of these might be necessary, the general number of them seems to be causing some errors to occur. Not flow-breaking errors, mind you, simply issues with copying and pasting the appropriate content (which is what those clicks exist to do).
+
+
