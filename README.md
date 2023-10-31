@@ -280,6 +280,7 @@ print(delegates)
 
 ### Adding More Power
 Once it became clear Python would be even more of a challenge than when previously implemented for the LinkedIn script, I once again began to feel the project reaching a state of failed finality. That was, until I finally acknowledged the cries of my cohorts. "Use Power Automate," they screamed! "It's so much easier," they cried! Their pleas fell upon deaf ears, until I had an incredible revalation. A deeply personal and entirely individual epiphany of epic porportions. I could just do it all in Power Automate!
+
 With the life advice of a close friend ringing in my head as a beacon ("We don't do lines"), I immediately saw greater and more accurate results using Microsoft's low-code environment than I had seen throughought almost the entire project thus far. After about five minutes of learning the layout of the Power Automate for Desktop, I began by creating a flow that would search and extract the names of all events in a given region. This proved to be a simple task, and we started attempting to scale-up the region size to include more results. As we did so, it became apparent that not all search results would return on a single page. As such, the flow had to be altered to look for the button element that could be clicked to show more results. After some tweaking of the loop values, I ended up with the following process:
 
 ![Name_Scraping_Flow](References/Names_Flow.png)
@@ -289,3 +290,17 @@ After running the above flow, we were left with an Excel sheet of 802 event name
 Not a problem, however. Plans were discussed to eventually implement Power BI for help with cleaning the data, but for now I could simply work within Power Query to organize our data into a single column to be easily read by the next flow in our process. Shown below are the first few results after being cleaned:
 
 ![Names_Sheet_Cleaned](References/Names_Cleaned_Excel.png)
+
+After cleaning the data, it was now possible to create a second flow that would read and search event names, then extract the desired information. This stage proved to be more challenging than the intial step of simply searching by region and extracting all the registered events. 
+
+Despite the more detailed automation, the flow can be broken down into simple actions. Firstly the cleaned event names are read from an Excel spreadsheet, then a new spreadsheet is made to house the detailed information parsed by the flow. Once we launch a browser instance, we can then run the next steps per each event name pulled from our cleaned data sheet. 
+
+For each given event, the flow will input the name within the search field on the 10Times webpage, search for the event, copy the link to the event page, and direct the browser to the event's detailed profile. When this page loads, the flow extracts the necessary data points and inserts the information to the newly created Excel file.
+
+Admittedly I am very new to Microsoft's Power Suite and this is my first interaction with Power Automate. While I believe my plan of intent to be effecient, I do not claim the execution to be anything more than amateur. That said...it works.
+
+![Event_Flow](References/Event_Flow.png)
+
+Once the above flow is run, we are returned with some pretty rough data. There are several issues with the flow above that will be addressed in the next chapter. That said, after cleaning the data returned from the initial run, we were still left with some promising results.
+
+![Event_Details_Cleaned](References/Event_Details_Excel.png)
