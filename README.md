@@ -10,7 +10,7 @@ What follows is an account of attempting to scrape two separate websites during 
 - [Chapter 2: Things Get 10Times Different](https://github.com/Gigert9/Scraping-Project-1/tree/main#chapter-2-things-get-10times-different)
     - [Main.py](https://github.com/Gigert9/Scraping-Project-1/tree/main#mainpy)
     - [Adding More Power](https://github.com/Gigert9/Scraping-Project-1/tree/main#adding-more-power)
-- [Chapter3: Scraping Up The Pieces](https://github.com/Gigert9/Scraping-Project-1/tree/main/README.md#chapter-3-scraping-up-the-pieces)
+- [Chapter3: Scraping Up The Pieces](https://github.com/Gigert9/Scraping-Project-1/tree/main#chapter-3-scraping-up-the-pieces)
     - [Moving Foward](https://github.com/Gigert9/Scraping-Project-1/tree/main#moving-forward)
 
 ## Chapter 1: Getting Ideas LinkedIn To Place
