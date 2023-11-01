@@ -10,6 +10,7 @@ What follows is an account of attempting to scrape two separate websites during 
 - [Chapter 2: Things Get 10Times Different](https://github.com/Gigert9/Scraping-Project-1/tree/main#chapter-2-things-get-10times-different)
     - [Main.py](https://github.com/Gigert9/Scraping-Project-1/tree/main#mainpy)
     - [Adding More Power](https://github.com/Gigert9/Scraping-Project-1/tree/main#adding-more-power)
+- [Chapter3: Scraping Up The Pieces](https://github.com/Gigert9/Scraping-Project-1/tree/main/README.md#chapter-3-scraping-up-the-pieces)
 
 ## Chapter 1: Getting Ideas LinkedIn To Place
 
@@ -313,6 +314,10 @@ So, we now had a (semi-) working flow that produces results that can be cleaned 
 
 Firstly, some may have noticed the instruction to read from line **1** to line **348** in column **'A'**. This is because after initially testing our first flow within a smaller region size and extracting event names, we had 348 results. Needless to say, when running the flow to look across all events throughout the US, the results size increased enormously. Naturally, this value would then need to be changed each time we extracted a new list of event names. Hardly effecient.
 
-Secondly, the event detailing flow makes use of an extraneous number of mouse clicks. While some of these might be necessary, the general number of them seems to be causing some errors to occur. Not flow-breaking errors, mind you, simply issues with copying and pasting the appropriate content (which is what those clicks exist to do).
+Secondly, the event detailing flow makes use of quite a few mouse clicks. While throughout testing these proved necessary, the general number of them (or perhaps their timing) seems to be causing some errors to occur. Not flow-breaking errors, mind you, simply issues with copying and pasting the appropriate content (which is what those clicks exist to do). In practice, once an event has been searched for, the mouse should right click the title (which is a hyperlink), left click copy link, left click the URL bar within Firefox, and finally right click **Paste and Go**.
 
+In addition, the mouse clicks that are used for selecting the event name and copying the URL to the full event profile page, rely on specific coordinate locations on the screen. Whenever a flow or program makes use of specific relative coordinates there exists the problem of universal application. The coordinates given for my personal computer screen might not match the correct location of the appropriate element to interact with on another screen. This can be solved by looking for a specific element, however (as has been mentioned previously) 10Times is not the best for relying on accurate element attributes for identification.
 
+### Moving Forward
+
+As much as I've discussed finality in this write-up, my experience of reality suggests no technology-oriented project (genuinely attempted) ever reaches a complete ending. Perhaps this is related to the ever-evolving nature of the industry. In addition to fixing the issues identified above, I look forward to dissecting further problems that will undoubtedly arise. I am confident this project will continue to grow and reach a state of effeciency that can guarantee us the desired results every time each flow is run. While striving for this goal, I am equally excited to learn more about the potentials of Microsoft's Power Suite; including Power BI, which I have yet to interact with. These are tools that have been constantly referenced to me by collegues in the field, and I recognize the necessity to understand their UIs and processes. As of writing, this project has been exceedingly educational, and I'm grateful (as always) to have been considered for the role I played. 
