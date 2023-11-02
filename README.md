@@ -311,7 +311,7 @@ Once the above flow is run, we are returned with some pretty rough data. There a
 
 ## Chapter 3: Scraping Up The Pieces
 
-So, we now had a (semi-) working flow that produces results that can be cleaned and followed up with. We're done, right? Well...as usually happens on these projects, the enthusiasm of the Project Lead has effected me to the point of wanting to continue to a point of actual finality. A finality that ideally isn't just successful, but effecient. Let's breakdown some of the issues with the flow responsible for parsing event details now.
+So, we now had a (semi-) working flow that produced results that can be cleaned and followed up with. We're done, right? Well...as usually happens on these projects, the enthusiasm of the Project Lead has effected me to the point of wanting to continue to a point of actual finality. A finality that ideally isn't just successful, but effecient. Let's breakdown some of the issues with the flow responsible for parsing event details now.
 
 Firstly, some may have noticed the instruction to read from line **1** to line **348** in column **'A'**. This is because after initially testing our first flow within a smaller region size and extracting event names, we had 348 results. Needless to say, when running the flow to look across all events throughout the US, the results size increased enormously. Naturally, this value would then need to be changed each time we extracted a new list of event names. Hardly effecient.
 
